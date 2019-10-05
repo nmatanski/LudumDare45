@@ -22,12 +22,14 @@
             set { m_Description = value; }
         }
 
+        [SerializeField, HideInInspector]
         List<PlaceAction> m_Actions;
-        void Awake()
+
+        void OnValidate()
         {
-            m_Actions = new List<PlaceAction>();
             GetComponents(m_Actions);
         }
+
         public int ActionCount
         {
             get { return m_Actions.Count; }
