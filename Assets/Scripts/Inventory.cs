@@ -50,5 +50,10 @@ namespace Stray
         {
             throw new NotImplementedException();
         }
+
+        public bool HasItem(IItem item)
+        {
+            return inventory.Contains(item);
+        }
     }
 }

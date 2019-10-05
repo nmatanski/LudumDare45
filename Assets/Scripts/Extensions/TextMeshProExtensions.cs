@@ -7,14 +7,14 @@ namespace Stray
 {
     public static class TextMeshProExtensions
     {
-        public static IEnumerator DisplayTextWithDelay(this TextMeshProUGUI textbox)
+        public static IEnumerator DisplayTextWithDelay(this TextMeshProUGUI textbox, float delay)
         {
             string text = textbox.text;
             textbox.text = "";
             foreach (var character in text)
             {
                 textbox.text += character;
-                yield return new WaitForSeconds(.1f);
+                yield return new WaitForSeconds(delay);
             }
         }
     }
