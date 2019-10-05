@@ -3,73 +3,99 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameState : MonoBehaviour
+
+namespace Stray
 {
-    private enum ClothingLevel
+    public class GameState : MonoBehaviour
     {
-        Naked, NoJeans, NoTshirt, NoSweatshirt, NoJacket, NoHat, Full
-    }
 
-    [SerializeField]
-    private int health = 100;
+        #region Configuration
+        [SerializeField]
+        private int health = 100;
 
-    [SerializeField]
-    private int cold = 0;
+        [SerializeField]
+        private int cold = 0;
 
-    [SerializeField]
-    private int wallet = 5;
+        [SerializeField]
+        private int wallet = 5;
 
-    [SerializeField]
-    private ClothingLevel clothes = ClothingLevel.Full;
-
-    [SerializeField]
-    private short time;
-    public short Time
-    {
-        get
+        [SerializeField]
+        private ClothingLevel clothing = ClothingLevel.Full;
+        public ClothingLevel Clothing
         {
-            return time;
-        }
-
-        set
-        {
-            time = value;
-            if (time == 24)
+            get { return clothing; }
+            set
             {
-                time = 0;
+                clothing = value;
+                if (clothing < ClothingLevel.NoJacket && !isVip)
+                {
+                    canSellClothes = false;
+                }
+
+                if (clothing < ClothingLevel.NoSweatshirt)
+                {
+                    isCold = true;
+                }
             }
         }
-    }
-
-    public int Day { get { return time / 24 + 1; } }
 
 
-    private void Awake()
-    {
-        int sessionsCount = FindObjectsOfType<GameState>().Length;
-        if (sessionsCount > 1)
+        [SerializeField]
+        private short time;
+        public short Time
         {
-            Destroy(gameObject);
+            get
+            {
+                return time;
+            }
+
+            set
+            {
+                time = value;
+                if (time == 24)
+                {
+                    time = 0;
+                }
+            }
         }
-        else
+        #endregion
+
+        #region State
+        private bool isCold = false;
+        private bool isVip = false;
+        private bool canSellClothes = true;
+
+        public int Day { get { return time / 24 + 1; } }
+        #endregion
+
+
+        private void Awake()
         {
-            DontDestroyOnLoad(gameObject);
+            int sessionsCount = FindObjectsOfType<GameState>().Length;
+            if (sessionsCount > 1)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                DontDestroyOnLoad(gameObject);
+            }
         }
-    }
 
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
+        private void OnEnable()
+        {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
 
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
+        private void OnDisable()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
 
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        time++;
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            time++;
+        }
     }
 }
