@@ -17,5 +17,13 @@ namespace Stray
                 yield return new WaitForSeconds(delay);
             }
         }
+
+        public static IEnumerator ChangeTextWithFadeOut(this TextMeshProUGUI textbox, string text)
+        {
+            ExtensionHelpers.FadeOutText(textbox);
+            yield return new WaitForSeconds(textbox.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.length); //prevents changing the text while the animation is playing
+            textbox.text = text;
+            ExtensionHelpers.FadeInText(textbox);
+        }
     }
 }
