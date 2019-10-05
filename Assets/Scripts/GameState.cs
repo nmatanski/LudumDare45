@@ -66,6 +66,8 @@ namespace Stray
         private bool canSellClothes = true;
 
         public int Day { get { return time / 24 + 1; } }
+
+        public Inventory Inventory { get; set; }
         #endregion
 
 
