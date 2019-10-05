@@ -17,7 +17,7 @@ namespace Stray
         public bool IsFull { get { return ItemCount == Capacity; } }
 
         [SerializeField]
-        private IItem[] inventory;
+        private Item[] inventory;
 
 
         public void Add(IItem item)
@@ -28,10 +28,10 @@ namespace Stray
             }
 
             int index = Array.FindIndex(inventory, currentItem => currentItem == null || ItemCount == 0);
-            inventory[index] = item ?? throw new NullReferenceException();
+            inventory[index] = (Item)item ?? throw new NullReferenceException();
         }
 
-        public void Discard(IItem item)
+        public void Remove(IItem item)
         {
             if (item == null)
             {
@@ -44,11 +44,6 @@ namespace Stray
         public IItem GetItem(int index)
         {
             return inventory[index];
-        }
-
-        public void Use(IItem item)
-        {
-            throw new NotImplementedException();
         }
 
         public bool HasItem(IItem item)
