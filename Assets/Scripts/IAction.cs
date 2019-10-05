@@ -2,6 +2,8 @@
 {
     public interface IAction
     {
-        bool OneTime { get; }
+        string Description { get; }
+        bool IsActive { get; }
+        IPlace TargetPlace { get; }
     }
 }
