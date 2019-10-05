@@ -3,8 +3,9 @@ namespace Stray
 {
     public interface IPlace
     {
-        string Name { get; }
+        string Title { get; }
         string Description { get; }
-        List<IAction> Actions { get; }
+        int ActionCount { get; }
+        IAction GetAction(int index);
     } 
 }
