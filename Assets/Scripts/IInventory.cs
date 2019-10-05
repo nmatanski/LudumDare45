@@ -9,8 +9,7 @@
         IItem GetItem(int index);
 
         void Add(IItem item);
-        void Use(IItem item);
-        void Discard(IItem item);
+        void Remove(IItem item);
         bool HasItem(IItem item);
     }
 }

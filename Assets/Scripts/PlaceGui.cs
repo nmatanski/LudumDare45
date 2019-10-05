@@ -7,6 +7,10 @@
     public sealed class PlaceGui : MonoBehaviour
     {
         [SerializeField]
+        GameController m_Controller;
+        [SerializeField]
+        GameState m_State;
+        [SerializeField]
         TextMeshProUGUI m_NameField;
         [SerializeField]
         TextMeshProUGUI m_DescriptionField;
@@ -15,15 +19,6 @@
 
         [SerializeField]
         Place m_Place;
-        public IPlace Place
-        {
-            get { return m_Place; }
-            set
-            {
-                m_Place = (Place)value;
-                UpdateGui();
-            }
-        }
 
         [SerializeField]
         ChoiceButton m_ButtonPrefab;
@@ -36,32 +31,37 @@
 
         void OnEnable()
         {
+            m_State.PlaceChanged += UpdateGui;
             UpdateGui();
         }
         public void Execute(IAction action)
         {
-            if (!action.IsActive) return;
-            if (action.TargetPlace != null)
+            if (!m_Controller.IsActionValid(action))
             {
-                Place = action.TargetPlace;
+                Debug.LogWarning($"Cannot execute '{action.Description}'");
+            }
+            else
+            {
+                m_Controller.Execute(action);
             }
         }
 
         void UpdateGui()
         {
+            var place = m_State.Place;
             DestroyAllChoices();
-            if (Place == null)
+            if (place == null)
             {
                 m_NameField.text = "";
                 m_DescriptionField.text = "";
             }
             else
             {
-                m_NameField.text = Place.Title;
-                m_DescriptionField.text = Place.Description;
-                for (int i = 0; i < Place.ActionCount; i++)
+                m_NameField.text = place.Title;
+                m_DescriptionField.text = place.Description;
+                for (int i = 0; i < place.ActionCount; i++)
                 {
-                    var action = Place.GetAction(i);
+                    var action = place.GetAction(i);
                     var button = Instantiate(ButtonPrefab, m_ChoicesContainer);
                     button.PlageGui = this;
                     button.Action = action;

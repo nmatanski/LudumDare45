@@ -317,6 +317,8 @@ GameObject:
   - component: {fileID: 814232156}
   - component: {fileID: 814232155}
   - component: {fileID: 814232157}
+  - component: {fileID: 814232158}
+  - component: {fileID: 814232159}
   m_Layer: 0
   m_Name: FoodMerchant
   m_TagString: Untagged
@@ -341,6 +343,10 @@ MonoBehaviour:
 
     As you walk in, a swarm of insects runs away from the food supplies to hide in
     the shadows. "Are you hungry?" he inquires.'
+  m_Actions:
+  - {fileID: 814232157}
+  - {fileID: 814232158}
+  - {fileID: 814232159}
 --- !u!4 &814232156
 Transform:
   m_ObjectHideFlags: 0
@@ -370,6 +376,48 @@ MonoBehaviour:
   m_Description: Exit
   m_IsActive: 1
   m_TargetPlace: {fileID: 2125595556}
+  m_AddItem: {fileID: 0}
+  m_UseItem: {fileID: 0}
+  m_DiscardItem: {fileID: 0}
+  m_ChangeMoney: 0
+--- !u!114 &814232158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814232154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Buy Apple (4$)
+  m_IsActive: 1
+  m_TargetPlace: {fileID: 0}
+  m_AddItem: {fileID: 11400000, guid: 86cb6608489c348479f310b8176b03bd, type: 2}
+  m_UseItem: {fileID: 0}
+  m_DiscardItem: {fileID: 0}
+  m_ChangeMoney: -4
+--- !u!114 &814232159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814232154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Buy Pants (40$)
+  m_IsActive: 1
+  m_TargetPlace: {fileID: 0}
+  m_AddItem: {fileID: 11400000, guid: aa48d42ed71063649aa1d3afcdf08862, type: 2}
+  m_UseItem: {fileID: 0}
+  m_DiscardItem: {fileID: 0}
+  m_ChangeMoney: -40
 --- !u!1 &865097091
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,6 +534,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0c1a0fc32000104bbd0ad877da2137d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Controller: {fileID: 2017918395}
+  m_State: {fileID: 2017918393}
   m_NameField: {fileID: 1292738485}
   m_DescriptionField: {fileID: 1036498295}
   m_ChoicesContainer: {fileID: 2083472547}
@@ -1159,6 +1209,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2017918394}
   - component: {fileID: 2017918393}
+  - component: {fileID: 2017918395}
   m_Layer: 0
   m_Name: GameState
   m_TagString: Untagged
@@ -1180,9 +1231,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   cold: 0
-  wallet: 0
-  clothes: 6
+  wallet: 5
+  clothing: 6
   time: 0
+  m_Inventory:
+    inventory:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  m_Place: {fileID: 2125595556}
+  m_PlaceChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!4 &2017918394
 Transform:
   m_ObjectHideFlags: 0
@@ -1197,6 +1260,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2017918395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017918392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2cd0aee92a0e4943be8bfa2a0dae80e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_State: {fileID: 2017918393}
 --- !u!1 &2083472546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,6 +1401,8 @@ MonoBehaviour:
   m_Description: 'A huge empty place once filled with the lives of so many people.
 
     How did we end up here? Let''s not get soft now, surviving is all that matters.'
+  m_Actions:
+  - {fileID: 2125595557}
 --- !u!114 &2125595557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1340,3 +1418,7 @@ MonoBehaviour:
   m_Description: Enter Tent
   m_IsActive: 1
   m_TargetPlace: {fileID: 814232155}
+  m_AddItem: {fileID: 0}
+  m_UseItem: {fileID: 0}
+  m_DiscardItem: {fileID: 0}
+  m_ChangeMoney: 0

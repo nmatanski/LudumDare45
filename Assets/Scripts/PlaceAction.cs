@@ -25,5 +25,31 @@
         {
             get { return m_TargetPlace; }
         }
+
+        [SerializeField]
+        Item m_AddItem;
+        public IItem AddItem
+        {
+            get { return m_AddItem; }
+        }
+        [SerializeField]
+        Item m_UseItem;
+        public IItem UseItem
+        {
+            get { return m_UseItem; }
+        }
+        [SerializeField]
+        Item m_DiscardItem;
+        public IItem DiscardItem
+        {
+            get { return m_DiscardItem; }
+        }
+        [SerializeField]
+        int m_ChangeMoney;
+        public int ChangeMoney
+        {
+            get { return m_ChangeMoney; }
+            set { m_ChangeMoney = value; }
+        }
     }
 }
