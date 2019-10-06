@@ -15,5 +15,5 @@ MonoBehaviour:
   healthAmountOnUse: 0
   warmthAmountOnEquip: 0
   warmthAmountOnDiscard: 0
-  name: 
+  name: Merchant's Eye
   sprite: {fileID: 21300000, guid: 480e0e01f02fd3e48bd2a0c53c9254f5, type: 3}
