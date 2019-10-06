@@ -20,10 +20,10 @@ namespace Stray
 
         public static IEnumerator ChangeTextWithFadeOut(this TextMeshProUGUI textbox, string text)
         {
-            ExtensionHelpers.FadeOutText(textbox);
+            Effects.FadeOutText(textbox);
             yield return new WaitForSeconds(textbox.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.length); //prevents changing the text while the animation is playing
             textbox.text = text;
-            ExtensionHelpers.FadeInText(textbox);
+            Effects.FadeInText(textbox);
         }
     }
 }
