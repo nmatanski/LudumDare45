@@ -31,12 +31,17 @@
 
         void OnEnable()
         {
-            m_State.PlaceChanged += UpdateGui;
+            m_Controller.StateChanged += UpdateGui;
             UpdateGui();
         }
+        void OnDisable()
+        {
+            m_Controller.StateChanged -= UpdateGui;
+        }
+
         public void Execute(IAction action)
         {
-            if (!m_Controller.IsActionValid(action))
+            if (!m_Controller.IsActionExecutable(action))
             {
                 Debug.LogWarning($"Cannot execute '{action.Description}'");
             }
@@ -59,12 +64,19 @@
             {
                 m_NameField.text = place.Title;
                 m_DescriptionField.text = place.Description;
+                // Spawn one button per action
                 for (int i = 0; i < place.ActionCount; i++)
                 {
                     var action = place.GetAction(i);
+                    // If it's not repeatable and it was already used, don't even show
+                    if (!m_Controller.IsActionValid(action)) continue;
+
                     var button = Instantiate(ButtonPrefab, m_ChoicesContainer);
-                    button.PlageGui = this;
-                    button.Action = action;
+                    button.SetData(
+                        action.Description, 
+                        onClick: () => Execute(action), 
+                        interactable: m_Controller.IsActionExecutable(action) // If we can't afford the action, show disabled
+                    );
                 }
             }
         }
