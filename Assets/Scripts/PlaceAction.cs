@@ -18,7 +18,12 @@
             get { return m_IsActive; }
             set { m_IsActive = value; }
         }
-
+        [SerializeField]
+        bool m_IsRepeatable = true;
+        public bool IsRepeatable
+        {
+            get { return m_IsRepeatable; }
+        }
         [SerializeField]
         Place m_TargetPlace;
         public IPlace TargetPlace

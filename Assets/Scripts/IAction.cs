@@ -3,7 +3,8 @@
     public interface IAction
     {
         string Description { get; }
-        bool IsActive { get; }
+        bool IsActive { get; set; }
+        bool IsRepeatable { get; }
         IPlace TargetPlace { get; }
 
         IItem AddItem { get; }

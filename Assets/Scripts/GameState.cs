@@ -94,22 +94,7 @@ namespace Stray
         public IPlace Place
         {
             get { return m_Place; }
-            set
-            {
-                m_Place = (Place)value;
-                OnPlaceChanged();
-            }
-        }
-        [SerializeField]
-        UnityEvent m_PlaceChanged;
-        public event UnityAction PlaceChanged
-        {
-            add { m_PlaceChanged.AddListener(value); }
-            remove { m_PlaceChanged.RemoveListener(value); }
-        }
-        void OnPlaceChanged()
-        {
-            m_PlaceChanged.Invoke();
+            set { m_Place = (Place)value; }
         }
         #endregion
 
