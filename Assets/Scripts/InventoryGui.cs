@@ -12,15 +12,7 @@
         GameState m_State;
 
         [SerializeField]
-        Button[] m_Buttons;
-
-        [NonSerialized]
-        Sprite m_EmptySprite;
-
-        void Awake()
-        {
-            m_EmptySprite = m_Buttons[0].image.sprite;
-        }
+        Image[] m_Images;
         void OnEnable()
         {
             m_Controller.StateChanged += UpdateGui;
@@ -35,22 +27,24 @@
         {
             for (int i = 0; i < m_State.Inventory.Capacity; i++)
             {
-                var button = m_Buttons[i];
-                button.onClick.RemoveAllListeners();
+                var image = m_Images[i];
+                //button.onClick.RemoveAllListeners();
 
                 var item = m_State.Inventory.GetItem(i);
 
                 bool isEmpty = item == null;
-                button.interactable = !isEmpty;
+                //button.interactable = !isEmpty;
                 if (isEmpty)
                 {
-                    button.image.sprite = m_EmptySprite;
+                    image.sprite = null;
+                    image.color = new Color(1, 1, 1, 0);
                 }
                 else
                 {
-                    button.image.sprite = item.Sprite;
+                    image.sprite = item.Sprite;
+                    image.color = new Color(1, 1, 1, 1);
                     int iCopy = i;
-                    button.onClick.AddListener(() => OnButtonClicked(iCopy));
+                    //button.onClick.AddListener(() => OnButtonClicked(iCopy));
                 }
             }
         }
