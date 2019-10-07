@@ -9,6 +9,13 @@
         public string Description
         {
             get { return m_Description; }
+            set { m_Description = value; }
+        }
+        [SerializeField]
+        string m_DescriptionAfter;
+        public string DescriptionAfter
+        {
+            get { return m_DescriptionAfter; }
         }
 
         [SerializeField]
@@ -23,7 +30,16 @@
         public bool IsRepeatable
         {
             get { return m_IsRepeatable; }
+            set { m_IsRepeatable = value; }
         }
+        [SerializeField]
+        bool m_DestroyAfterExecution = false;
+        public bool DestroyAfterExecution
+        {
+            get { return m_DestroyAfterExecution; }
+            set { m_DestroyAfterExecution = value; }
+        }
+
         [SerializeField]
         Place m_TargetPlace;
         public IPlace TargetPlace
@@ -36,19 +52,29 @@
         public IItem AddItem
         {
             get { return m_AddItem; }
+            set { m_AddItem = (Item)value; }
         }
-        [SerializeField]
-        Item m_UseItem;
-        public IItem UseItem
-        {
-            get { return m_UseItem; }
-        }
+        //[SerializeField]
+        //Item m_UseItem;
+        //public IItem UseItem
+        //{
+        //    get { return m_UseItem; }
+        //}
         [SerializeField]
         Item m_DiscardItem;
         public IItem DiscardItem
         {
             get { return m_DiscardItem; }
         }
+
+        [SerializeField]
+        int m_ChangeHealth;
+        public int ChangeHealth
+        {
+            get { return m_ChangeHealth; }
+            set { m_ChangeHealth = value; }
+        }
+
         [SerializeField]
         int m_ChangeMoney;
         public int ChangeMoney
