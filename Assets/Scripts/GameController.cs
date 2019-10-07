@@ -91,8 +91,18 @@
         {
             // All these checks are needed because an action has many optional fields
             if (action.ChangeMoney != 0) AddMoneyInternal(action.ChangeMoney);
-            if (action.DiscardItem != null) DiscardItemInternal(action.DiscardItem);
-            if (action.AddItem != null) AddItemInternal(action.AddItem);
+            bool inventoryWasAltered = false;
+            if (action.DiscardItem != null)
+            {
+                DiscardItemInternal(action.DiscardItem);
+                inventoryWasAltered = true;
+            }
+            if (action.AddItem != null)
+            {
+                AddItemInternal(action.AddItem);
+                inventoryWasAltered = true;
+            }
+            if (inventoryWasAltered) OnInventoryAltered();
             //if (action.UseItem != null) UseItemInternal(action.UseItem);
             if (action.TargetPlace != null)
             {
@@ -198,6 +208,18 @@
         void OnPlaceChanged(IPlace place)
         {
             m_PlaceChanged.Invoke(place);
+        }
+
+        [SerializeField]
+        UnityEvent m_InventoryAltered;
+        public event UnityAction InventoryAltered
+        {
+            add { m_InventoryAltered.AddListener(value); }
+            remove { m_InventoryAltered.RemoveListener(value); }
+        }
+        void OnInventoryAltered()
+        {
+            m_InventoryAltered.Invoke();
         }
     }
 }
