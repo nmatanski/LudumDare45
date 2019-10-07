@@ -14,6 +14,7 @@ namespace Stray
         //IItem UseItem { get; }
         IItem DiscardItem { get; }
 
+        int ChangeHealth { get; }
         int ChangeMoney { get; }
     }
 }

@@ -91,10 +91,11 @@
         {
             // All these checks are needed because an action has many optional fields
             if (action.ChangeMoney != 0) AddMoneyInternal(action.ChangeMoney);
-            if(action.AddItem != null) AddItemInternal(action.AddItem);
+            if (action.AddItem != null) AddItemInternal(action.AddItem);
             //if (action.UseItem != null) UseItemInternal(action.UseItem);
             if (action.DiscardItem != null) DiscardItemInternal(action.DiscardItem);
             if (action.TargetPlace != null) MoveToInternal(action.TargetPlace);
+            if (action.ChangeHealth != 0) ChangeHealthInternal(action.ChangeHealth);
 
             if (!action.IsRepeatable) action.IsActive = false;
             OnExecuted(action);
@@ -125,6 +126,10 @@
         {
             AddMoneyInternal(-cost);
             AddItemInternal(item);
+        }
+        void ChangeHealthInternal(int change)
+        {
+            m_State.Health += change;
         }
 
         void MoveToInternal(IPlace place)

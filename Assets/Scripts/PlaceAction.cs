@@ -66,6 +66,15 @@
         {
             get { return m_DiscardItem; }
         }
+
+        [SerializeField]
+        int m_ChangeHealth;
+        public int ChangeHealth
+        {
+            get { return m_ChangeHealth; }
+            set { m_ChangeHealth = value; }
+        }
+
         [SerializeField]
         int m_ChangeMoney;
         public int ChangeMoney
