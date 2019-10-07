@@ -8,10 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: e1361915abdb6234a946e6b5296f67e8
-  - enabled: 1
-    path: Assets/Scenes/Food Merchant.unity
-    guid: 5bd125d3f651afa4396d1f797ccea18b
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Gameplay 1.unity
+    guid: 9d97be1826140244a8dd454c23023cd9
   m_configObjects: {}

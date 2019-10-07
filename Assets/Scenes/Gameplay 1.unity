@@ -198,6 +198,8 @@ GameObject:
   - component: {fileID: 59645242}
   - component: {fileID: 59645247}
   - component: {fileID: 59645246}
+  - component: {fileID: 59645244}
+  - component: {fileID: 59645243}
   m_Layer: 0
   m_Name: Fountain (Musician)
   m_TagString: Untagged
@@ -219,6 +221,52 @@ Transform:
   m_Father: {fileID: 1502937600}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &59645243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59645241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Give him a lyre
+  m_DescriptionAfter: You gave the musician a beautiful lyre. He gave you a shiny
+    monocular in return.
+  m_IsActive: 1
+  m_IsRepeatable: 0
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 0}
+  m_AddItem: {fileID: 11400000, guid: 30ee41718fa2d4448ad6832b38dfb430, type: 2}
+  m_DiscardItem: {fileID: 11400000, guid: dafc7becd979f8e44ba532249ec42fa9, type: 2}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
+--- !u!114 &59645244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59645241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Give him a quill
+  m_DescriptionAfter: He gave you a fantasy novel in return. He also needs a lyre.
+    He has a surprise for you, if you find him a lyre.
+  m_IsActive: 1
+  m_IsRepeatable: 0
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 0}
+  m_AddItem: {fileID: 11400000, guid: c2db9a0d4044bcb4b9c1e4551309ef30, type: 2}
+  m_DiscardItem: {fileID: 11400000, guid: 4f16a8e87e30c9d41a0aaa5a1325bd6d, type: 2}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
 --- !u!114 &59645246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Description: Go to the plaza center
+  m_Description: Go to the plaza
   m_DescriptionAfter: 
   m_IsActive: 1
   m_IsRepeatable: 1
@@ -254,9 +302,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Title: Fountain
-  m_Description: 
+  m_Description: 'I notice a slim guy by the fountain, he was completely invisible
+    from a distance.
+
+    He welcomes me with a smile and immediately starts telling me of his days out
+    of here.
+
+    He was a musician, and a poet. Now, he can only watch the stars thinking about
+    what he lost.
+
+'
   m_Actions:
   - {fileID: 59645246}
+  - {fileID: 59645244}
+  - {fileID: 59645243}
 --- !u!1 &105065357
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,6 +736,257 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 274954070}
   m_Mesh: {fileID: 0}
+--- !u!1 &400347291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400347295}
+  - component: {fileID: 400347294}
+  - component: {fileID: 400347293}
+  - component: {fileID: 400347292}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &400347292
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400347291}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &400347293
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400347291}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &400347294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400347291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa0c345283f6f0044963a1caea99e08e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Controller: {fileID: 0}
+  m_State: {fileID: 0}
+  m_Sources:
+  - {fileID: 400347293}
+  - {fileID: 400347292}
+  m_Entries:
+  - PlaceName: Plaza
+    Clip: {fileID: 8300000, guid: e6cc08b05fbb2da4c8e326b3f78c20f2, type: 3}
+  - PlaceName: Abandoned Warehouse
+    Clip: {fileID: 8300000, guid: ccc73d130e7ffc94a8d1bdcafab2b267, type: 3}
+  - PlaceName: Guards Post
+    Clip: {fileID: 8300000, guid: 96d20d891f388dc4a8a409ebcec25e50, type: 3}
+  - PlaceName: Dark Room
+    Clip: {fileID: 8300000, guid: edd4d5f7d092a654f81afcd1aa6be09e, type: 3}
+--- !u!4 &400347295
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400347291}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &508989918
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,6 +998,9 @@ GameObject:
   - component: {fileID: 508989919}
   - component: {fileID: 508989921}
   - component: {fileID: 508989920}
+  - component: {fileID: 508989923}
+  - component: {fileID: 508989922}
+  - component: {fileID: 508989924}
   m_Layer: 0
   m_Name: Guards Post
   m_TagString: Untagged
@@ -744,9 +1057,83 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Title: Guards Post
-  m_Description: 
+  m_Description: 'I enter the only luxurious house in the district: a guard lives
+    here. Although he got many items to distract himself with, he is as much a prisoner
+    as anyone else in here. He would gladly give everything up to return to his family.
+    They live near the district but he''s not allowed to leave.
+
+'
   m_Actions:
   - {fileID: 508989920}
+  - {fileID: 508989923}
+  - {fileID: 508989922}
+  - {fileID: 508989924}
+--- !u!114 &508989922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508989918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Give monocular
+  m_DescriptionAfter: He gave you a purse filled with coins.
+  m_IsActive: 1
+  m_IsRepeatable: 0
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 0}
+  m_AddItem: {fileID: 11400000, guid: 9a9b5d68ed6c48d4bb2234a89bb9815b, type: 2}
+  m_DiscardItem: {fileID: 11400000, guid: 30ee41718fa2d4448ad6832b38dfb430, type: 2}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
+--- !u!114 &508989923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508989918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Give plant
+  m_DescriptionAfter: He gave you a lyre.
+  m_IsActive: 1
+  m_IsRepeatable: 0
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 0}
+  m_AddItem: {fileID: 11400000, guid: dafc7becd979f8e44ba532249ec42fa9, type: 2}
+  m_DiscardItem: {fileID: 11400000, guid: f986e75e3e6d5ab41a3326086cef4b81, type: 2}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
+--- !u!114 &508989924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508989918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Take the book from the ground
+  m_DescriptionAfter: The guard tells you that it's yours.
+  m_IsActive: 1
+  m_IsRepeatable: 0
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 0}
+  m_AddItem: {fileID: 11400000, guid: b8971392a2e14e14bada578af4c23d04, type: 2}
+  m_DiscardItem: {fileID: 0}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
 --- !u!1 &520383280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,6 +1830,7 @@ GameObject:
   - component: {fileID: 814232158}
   - component: {fileID: 814232159}
   - component: {fileID: 814232160}
+  - component: {fileID: 814232161}
   m_Layer: 0
   m_Name: Merchant's House
   m_TagString: Untagged
@@ -1472,6 +1860,7 @@ MonoBehaviour:
   - {fileID: 814232158}
   - {fileID: 814232159}
   - {fileID: 814232160}
+  - {fileID: 814232161}
 --- !u!4 &814232156
 Transform:
   m_ObjectHideFlags: 0
@@ -1520,16 +1909,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Description: Buy Apple (4$)
-  m_DescriptionAfter: You bought an apple for 4$
+  m_Description: Give him the fantasy book
+  m_DescriptionAfter: He catches a live eel from the aquarium and kills it in front
+    of you. It's yours now.
   m_IsActive: 1
-  m_IsRepeatable: 1
+  m_IsRepeatable: 0
   m_DestroyAfterExecution: 0
   m_TargetPlace: {fileID: 0}
-  m_AddItem: {fileID: 11400000, guid: 86cb6608489c348479f310b8176b03bd, type: 2}
-  m_DiscardItem: {fileID: 0}
+  m_AddItem: {fileID: 11400000, guid: efa31fcd24124bf46afb8f7aff3a2c40, type: 2}
+  m_DiscardItem: {fileID: 11400000, guid: c2db9a0d4044bcb4b9c1e4551309ef30, type: 2}
   m_ChangeHealth: 0
-  m_ChangeMoney: -4
+  m_ChangeMoney: 0
 --- !u!114 &814232159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1542,16 +1932,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Description: Buy Pants (40$)
-  m_DescriptionAfter: You bought pants for 40$
+  m_Description: Give him the horror book
+  m_DescriptionAfter: 
   m_IsActive: 1
-  m_IsRepeatable: 1
+  m_IsRepeatable: 0
   m_DestroyAfterExecution: 0
   m_TargetPlace: {fileID: 0}
-  m_AddItem: {fileID: 11400000, guid: aa48d42ed71063649aa1d3afcdf08862, type: 2}
-  m_DiscardItem: {fileID: 0}
+  m_AddItem: {fileID: 11400000, guid: 789503c0bb71dfa469cea3b92a284f71, type: 2}
+  m_DiscardItem: {fileID: 11400000, guid: b8971392a2e14e14bada578af4c23d04, type: 2}
   m_ChangeHealth: 0
-  m_ChangeMoney: -40
+  m_ChangeMoney: 0
 --- !u!114 &814232160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1564,15 +1954,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Description: Ouch! (-1 hp)
-  m_DescriptionAfter: (-1 hp)
+  m_Description: Get the gloves
+  m_DescriptionAfter: 
   m_IsActive: 1
-  m_IsRepeatable: 1
+  m_IsRepeatable: 0
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 0}
+  m_AddItem: {fileID: 11400000, guid: 93dc2a6f8245c2b41913ca6080471af2, type: 2}
+  m_DiscardItem: {fileID: 11400000, guid: 9a9b5d68ed6c48d4bb2234a89bb9815b, type: 2}
+  m_ChangeHealth: -1
+  m_ChangeMoney: 0
+--- !u!114 &814232161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814232154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Open trapdoor
+  m_DescriptionAfter: 
+  m_IsActive: 1
+  m_IsRepeatable: 0
   m_DestroyAfterExecution: 0
   m_TargetPlace: {fileID: 0}
   m_AddItem: {fileID: 0}
-  m_DiscardItem: {fileID: 0}
-  m_ChangeHealth: -1
+  m_DiscardItem: {fileID: 11400000, guid: 84fe4f4785e9ecd4d82d2451b823da48, type: 2}
+  m_ChangeHealth: 0
   m_ChangeMoney: 0
 --- !u!1 &865097091
 GameObject:
@@ -2127,6 +2539,100 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+--- !u!1 &963458719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 963458720}
+  - component: {fileID: 963458723}
+  - component: {fileID: 963458722}
+  - component: {fileID: 963458721}
+  m_Layer: 0
+  m_Name: Dark Room
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &963458720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963458719}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1502937600}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963458721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963458719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Unlock the door
+  m_DescriptionAfter: 
+  m_IsActive: 1
+  m_IsRepeatable: 0
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 0}
+  m_AddItem: {fileID: 0}
+  m_DiscardItem: {fileID: 11400000, guid: 257e52b17fa87d1438e8a668a2713386, type: 2}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
+--- !u!114 &963458722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963458719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Exit
+  m_DescriptionAfter: Exit
+  m_IsActive: 1
+  m_IsRepeatable: 1
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 814232155}
+  m_AddItem: {fileID: 0}
+  m_DiscardItem: {fileID: 0}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
+--- !u!114 &963458723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963458719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e1aad174c92c84d9d2ccd4a593b349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Title: Dark Room
+  m_Description: 
+  m_Actions:
+  - {fileID: 963458722}
+  - {fileID: 963458721}
 --- !u!1 &1036498293
 GameObject:
   m_ObjectHideFlags: 0
@@ -2848,6 +3354,10 @@ GameObject:
   - component: {fileID: 1307792942}
   - component: {fileID: 1307792944}
   - component: {fileID: 1307792943}
+  - component: {fileID: 1307792945}
+  - component: {fileID: 1307792948}
+  - component: {fileID: 1307792947}
+  - component: {fileID: 1307792946}
   m_Layer: 0
   m_Name: Abandoned Warehouse (Poor man)
   m_TagString: Untagged
@@ -2904,9 +3414,106 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Title: Abandoned Warehouse
-  m_Description: 
+  m_Description: 'I enter the small warehouse but I can''t see much. As my eyes get
+    used to the dark, a small curved figure becomes visible. He''s sitting naked on
+    rough stones, trembling and silently reaching out to me. This poor soul needs
+    help.
+
+'
   m_Actions:
   - {fileID: 1307792943}
+  - {fileID: 1307792945}
+  - {fileID: 1307792948}
+  - {fileID: 1307792947}
+  - {fileID: 1307792946}
+--- !u!114 &1307792945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307792941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Give him pants
+  m_DescriptionAfter: He gave you a quill.
+  m_IsActive: 1
+  m_IsRepeatable: 0
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 0}
+  m_AddItem: {fileID: 11400000, guid: 4f16a8e87e30c9d41a0aaa5a1325bd6d, type: 2}
+  m_DiscardItem: {fileID: 11400000, guid: aa48d42ed71063649aa1d3afcdf08862, type: 2}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
+--- !u!114 &1307792946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307792941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Give him the trap
+  m_DescriptionAfter: He gave you a keyring. What does it unlock? Who knows...
+  m_IsActive: 1
+  m_IsRepeatable: 0
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 0}
+  m_AddItem: {fileID: 11400000, guid: 257e52b17fa87d1438e8a668a2713386, type: 2}
+  m_DiscardItem: {fileID: 11400000, guid: 789503c0bb71dfa469cea3b92a284f71, type: 2}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
+--- !u!114 &1307792947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307792941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Give him the eel
+  m_DescriptionAfter: He gave you a potted plant.
+  m_IsActive: 1
+  m_IsRepeatable: 0
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 0}
+  m_AddItem: {fileID: 11400000, guid: f986e75e3e6d5ab41a3326086cef4b81, type: 2}
+  m_DiscardItem: {fileID: 11400000, guid: efa31fcd24124bf46afb8f7aff3a2c40, type: 2}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
+--- !u!114 &1307792948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307792941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Give him gloves
+  m_DescriptionAfter: He gave you a medieval dagger.
+  m_IsActive: 1
+  m_IsRepeatable: 0
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 0}
+  m_AddItem: {fileID: 11400000, guid: 84fe4f4785e9ecd4d82d2451b823da48, type: 2}
+  m_DiscardItem: {fileID: 11400000, guid: 93dc2a6f8245c2b41913ca6080471af2, type: 2}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
 --- !u!1 &1340955699
 GameObject:
   m_ObjectHideFlags: 0
@@ -3162,6 +3769,7 @@ Transform:
   - {fileID: 59645242}
   - {fileID: 1307792942}
   - {fileID: 508989919}
+  - {fileID: 963458720}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4532,6 +5140,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Stray.ActionCallback, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  m_PlaceChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Stray.PlaceChangedCallback, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &2083472546
 GameObject:
   m_ObjectHideFlags: 0
@@ -4686,7 +5299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Description: Enter Tent
+  m_Description: Go to merchant
   m_DescriptionAfter: 
   m_IsActive: 1
   m_IsRepeatable: 1
@@ -4730,7 +5343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Description: Go to the Guards Post
+  m_Description: Go to the guards
   m_DescriptionAfter: 
   m_IsActive: 1
   m_IsRepeatable: 1
