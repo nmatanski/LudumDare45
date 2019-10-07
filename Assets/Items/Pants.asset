@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a723ca40e374924298b13327ad0be49, type: 3}
   m_Name: Pants
   m_EditorClassIdentifier: 
-  name: Pants
+  name: Clothes
   sprite: {fileID: 21300188, guid: 12d7ffd93752c1a44b8cc4e7fedaa4c5, type: 3}
