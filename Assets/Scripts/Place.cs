@@ -38,5 +38,18 @@
         {
             return m_Actions[index];
         }
+
+        public IAction AddAction()
+        {
+            var newAction = gameObject.AddComponent<PlaceAction>();
+            m_Actions.Add(newAction);
+            return newAction;
+        }
+        public void RemoveAction(IAction action)
+        {
+            var placeAction = (PlaceAction)action;
+            m_Actions.Remove(placeAction);
+            Destroy(placeAction);
+        }
     }
 }

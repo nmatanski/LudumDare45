@@ -58,13 +58,13 @@
         void OnButtonClicked(int index)
         {
             var item = m_State.Inventory.GetItem(index);
-            if (m_Controller.UseItem(item))
+            if (m_Controller.DiscardItem(item))
             {
                 // Nothing to do here, the Gui should update automatically
             }
             else
             {
-                Debug.LogWarning($"Couldn't use item {item.Name}");
+                Debug.LogWarning($"Couldn't discard item {item.Name}");
             }
         }
     }

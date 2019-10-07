@@ -7,5 +7,7 @@ namespace Stray
         string Description { get; }
         int ActionCount { get; }
         IAction GetAction(int index);
-    } 
+        IAction AddAction();
+        void RemoveAction(IAction action);
+    }
 }
