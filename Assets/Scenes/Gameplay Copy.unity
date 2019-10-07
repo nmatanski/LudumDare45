@@ -1058,12 +1058,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Description: Exit
+  m_DescriptionAfter: 
   m_IsActive: 1
   m_IsRepeatable: 1
+  m_DestroyAfterExecution: 0
   m_TargetPlace: {fileID: 2125595556}
   m_AddItem: {fileID: 0}
-  m_UseItem: {fileID: 0}
   m_DiscardItem: {fileID: 0}
+  m_ChangeHealth: 0
   m_ChangeMoney: 0
 --- !u!114 &814232158
 MonoBehaviour:
@@ -1078,12 +1080,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Description: Buy Apple (4$)
+  m_DescriptionAfter: 
   m_IsActive: 1
   m_IsRepeatable: 1
+  m_DestroyAfterExecution: 0
   m_TargetPlace: {fileID: 0}
   m_AddItem: {fileID: 11400000, guid: 86cb6608489c348479f310b8176b03bd, type: 2}
-  m_UseItem: {fileID: 0}
   m_DiscardItem: {fileID: 0}
+  m_ChangeHealth: 0
   m_ChangeMoney: -4
 --- !u!114 &814232159
 MonoBehaviour:
@@ -1098,12 +1102,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Description: Buy Pants (40$)
+  m_DescriptionAfter: 
   m_IsActive: 1
   m_IsRepeatable: 1
+  m_DestroyAfterExecution: 0
   m_TargetPlace: {fileID: 0}
   m_AddItem: {fileID: 11400000, guid: aa48d42ed71063649aa1d3afcdf08862, type: 2}
-  m_UseItem: {fileID: 0}
   m_DiscardItem: {fileID: 0}
+  m_ChangeHealth: 0
   m_ChangeMoney: -40
 --- !u!1 &865097091
 GameObject:
@@ -2054,11 +2060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Controller: {fileID: 2017918395}
   m_State: {fileID: 2017918393}
-  m_Buttons:
-  - {fileID: 2003960905}
-  - {fileID: 1517277317}
-  - {fileID: 134379996}
-  - {fileID: 1497933510}
+  m_Images: []
 --- !u!1 &1292738483
 GameObject:
   m_ObjectHideFlags: 0
@@ -2543,6 +2545,8 @@ Transform:
   m_Children:
   - {fileID: 814232156}
   - {fileID: 2125595555}
+  - {fileID: 1607363134}
+  - {fileID: 1562352244}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2663,6 +2667,170 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517277315}
   m_CullTransparentMesh: 0
+--- !u!1 &1562352243
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1562352244}
+  - component: {fileID: 1562352246}
+  - component: {fileID: 1562352245}
+  m_Layer: 0
+  m_Name: Dustbins
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1562352244
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562352243}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1502937600}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1562352245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562352243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Go to the plaza
+  m_DescriptionAfter: 
+  m_IsActive: 1
+  m_IsRepeatable: 1
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 2125595556}
+  m_AddItem: {fileID: 0}
+  m_DiscardItem: {fileID: 0}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
+--- !u!114 &1562352246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562352243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e1aad174c92c84d9d2ccd4a593b349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Title: Dustbins
+  m_Description: <placeholder for the dustbins>
+  m_Actions:
+  - {fileID: 1562352245}
+--- !u!1 &1607363130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1607363134}
+  - component: {fileID: 1607363131}
+  - component: {fileID: 1607363133}
+  - component: {fileID: 1607363132}
+  m_Layer: 0
+  m_Name: Fountain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1607363131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607363130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58e1aad174c92c84d9d2ccd4a593b349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Title: Fountain
+  m_Description: <placeholder for the fountain>
+  m_Actions:
+  - {fileID: 1607363133}
+  - {fileID: 1607363132}
+--- !u!114 &1607363132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607363130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Steal the coins
+  m_DescriptionAfter: 
+  m_IsActive: 1
+  m_IsRepeatable: 1
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 0}
+  m_AddItem: {fileID: 0}
+  m_DiscardItem: {fileID: 0}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 5
+--- !u!114 &1607363133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607363130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Go to the plaza
+  m_DescriptionAfter: 
+  m_IsActive: 1
+  m_IsRepeatable: 1
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 2125595556}
+  m_AddItem: {fileID: 0}
+  m_DiscardItem: {fileID: 0}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
+--- !u!4 &1607363134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607363130}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1502937600}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1778240688
 GameObject:
   m_ObjectHideFlags: 0
@@ -3865,6 +4033,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  m_ActionExecuted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Stray.ActionCallback, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &2083472546
 GameObject:
   m_ObjectHideFlags: 0
@@ -3956,6 +4129,7 @@ GameObject:
   - component: {fileID: 2125595555}
   - component: {fileID: 2125595556}
   - component: {fileID: 2125595557}
+  - component: {fileID: 2125595558}
   m_Layer: 0
   m_Name: Plaza
   m_TagString: Untagged
@@ -3995,6 +4169,7 @@ MonoBehaviour:
     How did we end up here? Let''s not get soft now, surviving is all that matters.'
   m_Actions:
   - {fileID: 2125595557}
+  - {fileID: 2125595558}
 --- !u!114 &2125595557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4008,10 +4183,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Description: Enter Tent
+  m_DescriptionAfter: 
   m_IsActive: 1
   m_IsRepeatable: 1
+  m_DestroyAfterExecution: 0
   m_TargetPlace: {fileID: 814232155}
   m_AddItem: {fileID: 0}
-  m_UseItem: {fileID: 0}
   m_DiscardItem: {fileID: 0}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
+--- !u!114 &2125595558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125595554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Go to the fountain
+  m_DescriptionAfter: 
+  m_IsActive: 1
+  m_IsRepeatable: 1
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 1607363131}
+  m_AddItem: {fileID: 0}
+  m_DiscardItem: {fileID: 0}
+  m_ChangeHealth: 0
   m_ChangeMoney: 0
