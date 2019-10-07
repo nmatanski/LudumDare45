@@ -959,8 +959,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa0c345283f6f0044963a1caea99e08e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Controller: {fileID: 0}
-  m_State: {fileID: 0}
+  m_Controller: {fileID: 2017918395}
+  m_State: {fileID: 2017918393}
   m_Sources:
   - {fileID: 400347293}
   - {fileID: 400347292}
