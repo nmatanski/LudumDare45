@@ -97,6 +97,12 @@
             if (action.TargetPlace != null) MoveToInternal(action.TargetPlace);
             if (action.ChangeHealth != 0) ChangeHealthInternal(action.ChangeHealth);
 
+            if (!string.IsNullOrEmpty(action.DescriptionAfter))
+            {
+                if (!m_State.Place.Description.EndsWith("\n")) m_State.Place.Description += "\n";
+                m_State.Place.Description += action.DescriptionAfter;
+            }
+
             if (!action.IsRepeatable) action.IsActive = false;
             OnExecuted(action);
             OnStateChanged();
@@ -135,6 +141,7 @@
         void MoveToInternal(IPlace place)
         {
             m_State.Place = place;
+            m_State.Time += 3;
         }
 
         [SerializeField]

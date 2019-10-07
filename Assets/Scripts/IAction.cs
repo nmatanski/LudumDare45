@@ -5,6 +5,7 @@ namespace Stray
     public interface IAction
     {
         string Description { get; }
+        string DescriptionAfter { get; }
         bool IsActive { get; set; }
         bool IsRepeatable { get; }
         bool DestroyAfterExecution { get; set;  }

@@ -34,6 +34,7 @@
             m_Controller.StateChanged += UpdateGui;
             UpdateGui();
         }
+
         void OnDisable()
         {
             m_Controller.StateChanged -= UpdateGui;
@@ -63,7 +64,7 @@
             else
             {
                 m_NameField.text = place.Title;
-                m_DescriptionField.text = place.Description;
+                m_DescriptionField.text = place.Description + "\n";
                 // Spawn one button per action
                 for (int i = 0; i < place.ActionCount; i++)
                 {
