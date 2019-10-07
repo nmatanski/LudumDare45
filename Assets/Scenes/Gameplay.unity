@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Description: Back to the Plaza
+  m_Description: Go to the plaza center
   m_DescriptionAfter: 
   m_IsActive: 1
   m_IsRepeatable: 1
@@ -4623,6 +4623,10 @@ GameObject:
   - component: {fileID: 2125595555}
   - component: {fileID: 2125595556}
   - component: {fileID: 2125595557}
+  - component: {fileID: 2125595558}
+  - component: {fileID: 2125595559}
+  - component: {fileID: 2125595560}
+  - component: {fileID: 2125595561}
   m_Layer: 0
   m_Name: Plaza
   m_TagString: Untagged
@@ -4657,11 +4661,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Title: Plaza
-  m_Description: 'A huge empty place once filled with the lives of so many people.
+  m_Description: 'Today I''ve been brought in chains to this place: a small god-forgotten
+    district used as a prison. They think I killed a poor soul, but I''m innocent.
+    I need to find a way out of here.
 
-    How did we end up here? Let''s not get soft now, surviving is all that matters.'
+    I''m in a quare-shaped plaza right now and there are a few buildings around me:
+    a couple of houses and a small warehouse. There is also a fountain on one side
+    of the square.'
   m_Actions:
   - {fileID: 2125595557}
+  - {fileID: 2125595558}
+  - {fileID: 2125595559}
+  - {fileID: 2125595560}
+  - {fileID: 2125595561}
 --- !u!114 &2125595557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4681,6 +4693,94 @@ MonoBehaviour:
   m_DestroyAfterExecution: 0
   m_TargetPlace: {fileID: 814232155}
   m_AddItem: {fileID: 0}
+  m_DiscardItem: {fileID: 0}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
+--- !u!114 &2125595558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125595554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Reach fountain
+  m_DescriptionAfter: 
+  m_IsActive: 1
+  m_IsRepeatable: 1
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 59645247}
+  m_AddItem: {fileID: 0}
+  m_DiscardItem: {fileID: 0}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
+--- !u!114 &2125595559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125595554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Go to the Guards Post
+  m_DescriptionAfter: 
+  m_IsActive: 1
+  m_IsRepeatable: 1
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 508989921}
+  m_AddItem: {fileID: 0}
+  m_DiscardItem: {fileID: 0}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
+--- !u!114 &2125595560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125595554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Enter warehouse
+  m_DescriptionAfter: 
+  m_IsActive: 1
+  m_IsRepeatable: 1
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 1307792944}
+  m_AddItem: {fileID: 0}
+  m_DiscardItem: {fileID: 0}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
+--- !u!114 &2125595561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125595554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Take pants from the ground
+  m_DescriptionAfter: I found a pair of pants on the ground and picked them up
+  m_IsActive: 1
+  m_IsRepeatable: 0
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 0}
+  m_AddItem: {fileID: 11400000, guid: aa48d42ed71063649aa1d3afcdf08862, type: 2}
   m_DiscardItem: {fileID: 0}
   m_ChangeHealth: 0
   m_ChangeMoney: 0

@@ -102,7 +102,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24
+  m_fontSize: 14
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_IgnoreLayout: 0
   m_MinWidth: -1
   m_MinHeight: -1
-  m_PreferredWidth: 240
+  m_PreferredWidth: 120
   m_PreferredHeight: 60
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
@@ -323,4 +323,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LabelField: {fileID: 465181630329026731}
   m_Button: {fileID: 5257105837471964075}
-  m_PlaceGui: {fileID: 0}
