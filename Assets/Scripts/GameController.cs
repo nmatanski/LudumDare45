@@ -91,10 +91,14 @@
         {
             // All these checks are needed because an action has many optional fields
             if (action.ChangeMoney != 0) AddMoneyInternal(action.ChangeMoney);
+            if (action.DiscardItem != null) DiscardItemInternal(action.DiscardItem);
             if (action.AddItem != null) AddItemInternal(action.AddItem);
             //if (action.UseItem != null) UseItemInternal(action.UseItem);
-            if (action.DiscardItem != null) DiscardItemInternal(action.DiscardItem);
-            if (action.TargetPlace != null) MoveToInternal(action.TargetPlace);
+            if (action.TargetPlace != null)
+            {
+                MoveToInternal(action.TargetPlace);
+                OnPlaceChanged(action.TargetPlace);
+            }
             if (action.ChangeHealth != 0) ChangeHealthInternal(action.ChangeHealth);
 
             if (!string.IsNullOrEmpty(action.DescriptionAfter))
@@ -182,6 +186,18 @@
         void OnExecuted(IAction action)
         {
             m_ActionExecuted.Invoke(action);
+        }
+
+        [SerializeField]
+        PlaceChangedCallback m_PlaceChanged;
+        public event UnityAction<IPlace> PlaceChanged
+        {
+            add { m_PlaceChanged.AddListener(value); }
+            remove { m_PlaceChanged.RemoveListener(value); }
+        }
+        void OnPlaceChanged(IPlace place)
+        {
+            m_PlaceChanged.Invoke(place);
         }
     }
 }
