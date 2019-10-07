@@ -970,7 +970,7 @@ MonoBehaviour:
   - PlaceName: Abandoned Warehouse
     Clip: {fileID: 8300000, guid: ccc73d130e7ffc94a8d1bdcafab2b267, type: 3}
   - PlaceName: Guards Post
-    Clip: {fileID: 8300000, guid: 96d20d891f388dc4a8a409ebcec25e50, type: 3}
+    Clip: {fileID: 8300000, guid: f9a81176a01e8d34fa1afae1c13320f2, type: 3}
   - PlaceName: Dark Room
     Clip: {fileID: 8300000, guid: edd4d5f7d092a654f81afcd1aa6be09e, type: 3}
 --- !u!4 &400347295
@@ -5145,6 +5145,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Stray.PlaceChangedCallback, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  m_InventoryAltered:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &2083472546
 GameObject:
   m_ObjectHideFlags: 0
