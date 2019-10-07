@@ -10,18 +10,17 @@ namespace Stray
 {
     public static class SFXExtensions
     {
-        public static IEnumerator FadeOutAudio(this AudioSource source, float duration)
+        public static IEnumerator FadeAudio(this AudioSource source, float startVolume = 1, float endVolume = 0, float duration = 1)
         {
-            float defaultVolume = source.volume;
-
-            while (source.volume > 0)
+            float elapsedTime = 0;
+            while (elapsedTime < duration)
             {
-                source.volume -= defaultVolume * Time.deltaTime / duration;
+                source.volume = Mathf.Lerp(startVolume, endVolume, elapsedTime / duration);
+
+                elapsedTime += Time.deltaTime;
                 yield return new WaitForEndOfFrame();
             }
-
-            source.Stop();
-            source.volume = defaultVolume;
+            source.volume = endVolume;
         }
     }
 }

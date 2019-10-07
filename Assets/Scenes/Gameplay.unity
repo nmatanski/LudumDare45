@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 59645242}
   - component: {fileID: 59645247}
   - component: {fileID: 59645246}
+  - component: {fileID: 59645243}
   m_Layer: 0
   m_Name: Fountain (Musician)
   m_TagString: Untagged
@@ -219,6 +220,30 @@ Transform:
   m_Father: {fileID: 1502937600}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &59645243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59645241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Give quill
+  m_DescriptionAfter: The artist brigthens as he receives the quill from me. He will
+    be able to start writing again. As a sign of gratitude, he accepts to part with
+    a book titled "Elves on the shelves".
+  m_IsActive: 1
+  m_IsRepeatable: 1
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 0}
+  m_AddItem: {fileID: 11400000, guid: c2db9a0d4044bcb4b9c1e4551309ef30, type: 2}
+  m_DiscardItem: {fileID: 11400000, guid: 4f16a8e87e30c9d41a0aaa5a1325bd6d, type: 2}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
 --- !u!114 &59645246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,9 +279,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Title: Fountain
-  m_Description: 
+  m_Description: 'I notice a slim guy by the fountain, he was completely invisible
+    from a distance.
+
+    He welcomes me with a smile and immediately starts telling me of his days out
+    of here.
+
+    He was a musician, and a poet. Now, he can only watch the stars thinking about
+    what he lost.
+
+'
   m_Actions:
   - {fileID: 59645246}
+  - {fileID: 59645243}
 --- !u!1 &105065357
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,6 +723,7 @@ GameObject:
   - component: {fileID: 508989919}
   - component: {fileID: 508989921}
   - component: {fileID: 508989920}
+  - component: {fileID: 508989922}
   m_Layer: 0
   m_Name: Guards Post
   m_TagString: Untagged
@@ -744,9 +780,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Title: Guards Post
-  m_Description: 
+  m_Description: 'I enter the only luxurious house in the district: a guard lives
+    here. Although he got many items to distract himself with, he is as much a prisoner
+    as anyone else in here. He would gladly give everything up to return to his family.
+    They live near the district but he''s not allowed to leave.
+
+'
   m_Actions:
   - {fileID: 508989920}
+  - {fileID: 508989922}
+--- !u!114 &508989922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508989918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Give plant
+  m_DescriptionAfter: 
+  m_IsActive: 1
+  m_IsRepeatable: 1
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 0}
+  m_AddItem: {fileID: 0}
+  m_DiscardItem: {fileID: 0}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
 --- !u!1 &520383280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,10 +1505,8 @@ GameObject:
   - component: {fileID: 814232155}
   - component: {fileID: 814232157}
   - component: {fileID: 814232158}
-  - component: {fileID: 814232159}
-  - component: {fileID: 814232160}
   m_Layer: 0
-  m_Name: Merchant's House
+  m_Name: Merchant's tent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1462,16 +1524,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e1aad174c92c84d9d2ccd4a593b349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Title: Food Merchant
+  m_Title: Merchant's tent
   m_Description: 'You see a skinny old man, half naked, sitting on a pile of junk.
 
     As you walk in, a swarm of insects runs away from the food supplies to hide in
-    the shadows. "Are you hungry?" he inquires.'
+    the shadows. "Are you hungry?" he inquires.
+
+'
   m_Actions:
   - {fileID: 814232157}
   - {fileID: 814232158}
-  - {fileID: 814232159}
-  - {fileID: 814232160}
 --- !u!4 &814232156
 Transform:
   m_ObjectHideFlags: 0
@@ -1520,59 +1582,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Description: Buy Apple (4$)
-  m_DescriptionAfter: You bought an apple for 4$
+  m_Description: Give book for electric eel
+  m_DescriptionAfter: The merchant has everything he needs to run a business in the
+    district, but noone is interested in reading here. He's so bored he's willing
+    to exchange a book for a rare Eel exemplar. As you touch the animal, a big electric
+    discharge hurts you.
   m_IsActive: 1
   m_IsRepeatable: 1
   m_DestroyAfterExecution: 0
   m_TargetPlace: {fileID: 0}
-  m_AddItem: {fileID: 11400000, guid: 86cb6608489c348479f310b8176b03bd, type: 2}
-  m_DiscardItem: {fileID: 0}
-  m_ChangeHealth: 0
-  m_ChangeMoney: -4
---- !u!114 &814232159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814232154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Description: Buy Pants (40$)
-  m_DescriptionAfter: You bought pants for 40$
-  m_IsActive: 1
-  m_IsRepeatable: 1
-  m_DestroyAfterExecution: 0
-  m_TargetPlace: {fileID: 0}
-  m_AddItem: {fileID: 11400000, guid: aa48d42ed71063649aa1d3afcdf08862, type: 2}
-  m_DiscardItem: {fileID: 0}
-  m_ChangeHealth: 0
-  m_ChangeMoney: -40
---- !u!114 &814232160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814232154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Description: Ouch! (-1 hp)
-  m_DescriptionAfter: (-1 hp)
-  m_IsActive: 1
-  m_IsRepeatable: 1
-  m_DestroyAfterExecution: 0
-  m_TargetPlace: {fileID: 0}
-  m_AddItem: {fileID: 0}
-  m_DiscardItem: {fileID: 0}
-  m_ChangeHealth: -1
+  m_AddItem: {fileID: 11400000, guid: efa31fcd24124bf46afb8f7aff3a2c40, type: 2}
+  m_DiscardItem: {fileID: 11400000, guid: c2db9a0d4044bcb4b9c1e4551309ef30, type: 2}
+  m_ChangeHealth: -5
   m_ChangeMoney: 0
 --- !u!1 &865097091
 GameObject:
@@ -2127,6 +2148,255 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+--- !u!1 &1025364627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1025364631}
+  - component: {fileID: 1025364630}
+  - component: {fileID: 1025364629}
+  - component: {fileID: 1025364628}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1025364628
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025364627}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &1025364629
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025364627}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1025364630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025364627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa0c345283f6f0044963a1caea99e08e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Controller: {fileID: 2017918395}
+  m_State: {fileID: 2017918393}
+  m_Sources:
+  - {fileID: 1025364629}
+  - {fileID: 1025364628}
+  m_Entries:
+  - PlaceName: Plaza
+    Clip: {fileID: 8300000, guid: e6cc08b05fbb2da4c8e326b3f78c20f2, type: 3}
+  - PlaceName: Abandoned Warehouse
+    Clip: {fileID: 8300000, guid: ccc73d130e7ffc94a8d1bdcafab2b267, type: 3}
+  - PlaceName: Guards Post
+    Clip: {fileID: 8300000, guid: 96d20d891f388dc4a8a409ebcec25e50, type: 3}
+--- !u!4 &1025364631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025364627}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1036498293
 GameObject:
   m_ObjectHideFlags: 0
@@ -2848,6 +3118,8 @@ GameObject:
   - component: {fileID: 1307792942}
   - component: {fileID: 1307792944}
   - component: {fileID: 1307792943}
+  - component: {fileID: 1307792945}
+  - component: {fileID: 1307792946}
   m_Layer: 0
   m_Name: Abandoned Warehouse (Poor man)
   m_TagString: Untagged
@@ -2904,9 +3176,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Title: Abandoned Warehouse
-  m_Description: 
+  m_Description: 'I enter the small warehouse but I can''t see much. As my eyes get
+    used to the dark, a small curved figure becomes visible. He''s sitting naked on
+    rough stones, trembling and silently reaching out to me. This poor soul needs
+    help.
+
+'
   m_Actions:
   - {fileID: 1307792943}
+  - {fileID: 1307792945}
+  - {fileID: 1307792946}
+--- !u!114 &1307792945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307792941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: Give clothes
+  m_DescriptionAfter: The man slowly stands up and take the clothes from you. He trembles
+    to much he barely manages to wear them. He smiles crying and gifts you with a
+    feather he found on the ground.
+  m_IsActive: 1
+  m_IsRepeatable: 1
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 0}
+  m_AddItem: {fileID: 11400000, guid: 4f16a8e87e30c9d41a0aaa5a1325bd6d, type: 2}
+  m_DiscardItem: {fileID: 11400000, guid: aa48d42ed71063649aa1d3afcdf08862, type: 2}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
+--- !u!114 &1307792946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307792941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Description: 
+  m_DescriptionAfter: The man is not hesitant to kill the Eel and swallows it in a
+    matter of seconds. Visibly content, he rewards me with the sprout of a small plant.
+  m_IsActive: 1
+  m_IsRepeatable: 1
+  m_DestroyAfterExecution: 0
+  m_TargetPlace: {fileID: 0}
+  m_AddItem: {fileID: 11400000, guid: f986e75e3e6d5ab41a3326086cef4b81, type: 2}
+  m_DiscardItem: {fileID: 11400000, guid: efa31fcd24124bf46afb8f7aff3a2c40, type: 2}
+  m_ChangeHealth: 0
+  m_ChangeMoney: 0
 --- !u!1 &1340955699
 GameObject:
   m_ObjectHideFlags: 0
@@ -4532,6 +4858,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Stray.ActionCallback, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  m_PlaceChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Stray.PlaceChangedCallback, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!1 &2083472546
 GameObject:
   m_ObjectHideFlags: 0
@@ -4667,7 +4998,9 @@ MonoBehaviour:
 
     I''m in a quare-shaped plaza right now and there are a few buildings around me:
     a couple of houses and a small warehouse. There is also a fountain on one side
-    of the square.'
+    of the square.
+
+'
   m_Actions:
   - {fileID: 2125595557}
   - {fileID: 2125595558}
@@ -4774,8 +5107,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c4a74cc2aff1242bea1325f278be60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Description: Take pants from the ground
-  m_DescriptionAfter: I found a pair of pants on the ground and picked them up
+  m_Description: Take clothes from the ground
+  m_DescriptionAfter: I found clothes on the ground and picked them up
   m_IsActive: 1
   m_IsRepeatable: 0
   m_DestroyAfterExecution: 0
