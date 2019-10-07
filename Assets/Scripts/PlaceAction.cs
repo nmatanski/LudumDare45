@@ -12,6 +12,7 @@
             set { m_Description = value; }
         }
         [SerializeField]
+        [TextArea]
         string m_DescriptionAfter;
         public string DescriptionAfter
         {
